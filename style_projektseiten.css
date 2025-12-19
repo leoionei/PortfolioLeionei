@@ -1,0 +1,250 @@
+:root {
+  --section-gap: 40px; /* Abstand zwischen Hero und Grid (ändere hier) */
+  --white-gap-height: 400px; /* Höhe des weißen Bereichs rechts (ändert Startposition des Bilds) */
+  --image-offset-y: 0px; /* zusätzliche Verschiebung des Bilds nach unten */
+  --image-rotate: -2deg; /* leichte Diagonale/Rotation des Bilds */
+}
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+  font-family: "neue-haas-grotesk-text", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #111;
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+p {
+  margin: 0;
+}
+/* Reset typische Abstände */
+h1,
+p {
+  margin: 0 0 16px 0;
+}
+
+/* --------- Fullscreen Image FIX --------- */
+
+.fullscreen {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fullscreen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Bild füllt den Bildschirm */
+  object-position: center; /* Bild wird zentriert */
+  display: block;
+}
+
+.fullscreen-spezial {
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.fullscreen-spezial img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Bild füllt den Bildschirm */
+  object-position: top; /* Bild wird zentriert */
+  display: block;
+}
+
+/* --------- Navigation (fixed) --------- */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  background: none;
+  padding: 20px 0px 0px 25px;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 400;
+}
+
+nav ul li a:hover {
+  opacity: 0.7;
+}
+
+/* --------- Project Grid --------- */
+
+.project-grid {
+  display: grid;
+  padding: 0 15px 15px 15px;
+  gap: 15px 15px;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.project-grid__zeilensperre {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+}
+
+.project-grid__text {
+  grid-column: 6 / 11;
+  padding-top: 1vw;
+  padding-left: 5px;
+}
+
+.project-grid__text_me {
+  grid-column: auto / span 6;
+  padding-top: 10vw;
+  display: inline;
+}
+
+.project-grid__text2 {
+  grid-column: 6 / span 6;
+  padding-left: 5px;
+  grid-column: 1 / 6;
+}
+.project-grid__image {
+  padding-top: 24vw;
+  padding-bottom: 8vw;
+  grid-column: 7 / 13;
+}
+
+.project-grid__image2 {
+  padding-top: 22vw;
+  padding-bottom: 8vw;
+  grid-column: 7 / 12;
+}
+
+.project-grid__font {
+  padding-bottom: 8vw;
+  grid-column: 1 / 12;
+}
+
+.project-grid__animation video {
+  width: auto;
+  height: 90vh;
+  display: block;
+}
+
+.project-grid__poster img {
+  height: 90vh;
+  width: auto;
+}
+.project-grid__me {
+  grid-column: 1 / span 6; /* oder 1 / 7 */
+}
+
+.project-grid__me img {
+  grid-column: auto / 6;
+
+  height: 100vh;
+  width: auto;
+  object-fit: cover;
+}
+
+.project-grid__image_high {
+  padding-bottom: 8vw;
+  grid-column: auto / span 6;
+}
+
+.project-grid__12 {
+  grid-column: auto / span 12;
+}
+
+.project-grid__6 {
+  grid-column: auto / span 6;
+}
+
+.project-grid__3 {
+  grid-column: auto / span 3;
+}
+
+.project-grid__text h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.project-grid__text_me h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+  line-height: 1;
+  font-weight: 400;
+}
+
+.project-grid__text2 p {
+  font-size: 15px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  margin-top: 81px;
+}
+
+.project-grid__text p {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.project-grid__text_me p {
+  font-size: 20px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.project-grid__end {
+  background: #000;
+  color: #fff;
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: flex-start; /* linksbündig */
+  align-items: flex-start; /* oben ausgerichtet */
+  box-sizing: border-box;
+  padding: 20px; /* Abstand oben & innen */
+}
+
+.contact-container {
+  display: flex;
+  gap: 25px; /* Abstand zwischen den Spalten */
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column; /* Titel über Link */
+  align-items: flex-start; /* linksbündig */
+}
+
+.contact-item a {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 4px;
+}
+
+.contact-item a:hover {
+  opacity: 0.7;
+}
+
+.contact-title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-bottom: 1.5px;
+}

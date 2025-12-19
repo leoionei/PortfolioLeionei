@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://use.typekit.net/vkv5lvw.css" />
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#" data-action="gallery">Leonie Probst</a></li>
+          <li><a href="#" data-action="overview">Overview</a></li>
+          <li><a href="about-me.html">About</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Fullscreen Bild 1 mit Link -->
+    <section class="fullscreen">
+      <a href="wild-neighbours.html">
+        <img
+          src="bilder/wild_neighbours/homepage/wild_neighbours_startseite.jpg"
+          alt="Wild Neighbours"
+        />
+      </a>
+      <p class="fullscreen__titel">
+        WILD NEIGHBOURS
+        <a href="wild-neighbours.html"></a>
+      </p>
+    </section>
+
+    <section class="fullscreen">
+      <a href="choisissez-vos-obstacles.html">
+        <img
+          src="bilder/choisissez_vos_obstacles/choisissez_vos_obstacles_startseite.jpg"
+          alt="Choissisez vos obstacles"
+        />
+      </a>
+      <p class="fullscreen__titel">
+        CHOISISSEZ VOS OBSTACLES
+        <a href="choisissez-vos-obstacles.html"></a>
+      </p>
+    </section>
+    <section class="fullscreen">
+      <a href="visuelle-klangwelten.html">
+        <img
+          src="bilder/masterabschluss_plakat/visuelle_klangwelten_startseite.jpg"
+          alt="Visuelle Klangwelten"
+        />
+      </a>
+      <p class="fullscreen__titel">
+        VISUELLE KLANGWELTEN
+        <a href="visuelle-klangwelten.html"></a>
+      </p>
+    </section>
+
+    <section class="fullscreen">
+      <a href="schön-leiden.html">
+        <img
+          src="bilder/schön_leiden/zeitung/Blickwechsel_Zeitung_Stimmungsbild_241125.jpg"
+          alt="Schön Leiden"
+        />
+      </a>
+      <p class="fullscreen__titel">
+        SCHÖN LEIDEN
+        <a href="schön-leiden.html"></a>
+      </p>
+    </section>
+
+    <section class="fullscreen">
+      <a href="50-jahre-lemo.html">
+        <img src="bilder/lemo_2025/161025_Lemo.jpg" alt="Projekt 3" />
+      </a>
+      <p class="fullscreen__titel">
+        50 JAHRE LEHRERBILDUNG VON MORGEN
+        <a href="50-jahre-lemo.html" alt="50 Jahre LEMO"></a>
+      </p>
+    </section>
+
+    <section class="fullscreen">
+      <a href="schwindende-paradies.html">
+        <img
+          src="bilder/illustration/illustration-startseite.jpg"
+          alt="Das schwindende Paradies"
+        />
+      </a>
+      <p class="fullscreen__titel">
+        DAS SCHWINDENDE PARADIES
+        <a href="schwindende-paradies.html"></a>
+      </p>
+    </section>
+
+    <!-- Javascript -->
+    <script>
+      // Funktion, die den Hash-Teil der URL überprüft
+      function checkHashForOverview() {
+        // window.location.hash gibt den Hash-Teil der URL zurück (inklusive '#')
+        // z.B. bei /index.html#overview wird '#overview' zurückgegeben
+        if (window.location.hash === "#overview") {
+          // Wenn der Hash genau '#overview' ist, das Dataset-Attribut setzen
+          document.body.dataset.menue = "overview";
+          console.log(
+            "Seite wurde mit #overview geladen. Body data-menue gesetzt."
+          );
+        }
+        // Optional: Wenn ein anderer Hash existiert oder keiner,
+        // könnte man hier document.body.removeAttribute("data-menue"); setzen,
+        // aber für Ihren Fall ist die Gallery ja der Standardzustand.
+      }
+
+      // 1. Initial beim Laden der Seite den Hash überprüfen
+      checkHashForOverview();
+
+      // 2. Bestehende Event Listener für die Navigation beibehalten
+
+      // Overview aktivieren
+      document
+        .querySelector('a[data-action="overview"]')
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.body.dataset.menue = "overview";
+          // Optional: Den Hash in der URL aktualisieren, ohne die Seite neu zu laden
+          // Dies erlaubt das Teilen der URL mit dem korrekten Zustand
+          window.location.hash = "overview";
+          scrollToTop(1000);
+        });
+
+      // Gallery = Normalzustand
+      document
+        .querySelector('a[data-action="gallery"]')
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          document.body.removeAttribute("data-menue");
+          // Optional: Den Hash aus der URL entfernen
+          history.pushState(
+            "",
+            document.title,
+            window.location.pathname + window.location.search
+          );
+        });
+
+      function scrollToTop(duration = duration) {
+        window.scrollTo({
+          top: 0,
+          left: 0,
+          behavior: "smooth",
+        });
+      }
+
+      // 3. Optional: Auf Hash-Änderungen reagieren, wenn man manuell im Browser navigiert
+      // oder bei Nutzung der Vor-/Zurück-Buttons (wird in Ihrem Fall durch die Klick-Listener oben schon abgedeckt,
+      // aber es ist eine gute Praxis für Single-Page Applications)
+      window.addEventListener("hashchange", checkHashForOverview);
+    </script>
+  </body>
+</html>
