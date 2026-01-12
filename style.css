@@ -40,7 +40,7 @@ body {
 }
 
 body[data-menue="overview"] .fullscreen {
-  height: 100px !important;
+  height: 14.2857vh !important;
   transition: height 1s 0.1s;
 }
 
