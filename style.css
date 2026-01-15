@@ -166,7 +166,7 @@ body[data-menue="overview"] .fullscreen {
     color: white !important;
     text-decoration: none !important;
     /* proportional: Clamp zwischen 14px und 18px */
-    font-size: clamp(14px, 3.2vw, 18px) !important;
+    font-size: clamp(20px, 3.2vw, 18px) !important;
     font-weight: 400 !important;
   }
 
