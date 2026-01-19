@@ -105,7 +105,7 @@ header nav ul li a:hover {
 
 /* Text Bereich (About Leonie) - ANGEPASST */
 .project-grid__text_me {
-  grid-column: 6 / 13; /* Text rechts: Spalte 7 bis Ende */
+  grid-column: 6 / 11; /* Text rechts: Spalte 7 bis Ende */
   grid-row: 1; /* Erste Reihe */
   padding-top: 5vw;
   padding-left: 0 !important;
@@ -113,7 +113,6 @@ header nav ul li a:hover {
 
 .project-grid__text_me h1 {
   font-size: 20px;
-  margin-bottom: 5px;
   margin-top: 100px;
   line-height: 1;
   font-weight: 400;
@@ -122,13 +121,12 @@ header nav ul li a:hover {
 .project-grid__text_me p {
   font-size: 20px;
   line-height: 1.2;
-  margin-bottom: 5px;
   grid-row: 1;
 }
 
 /* Text Bereich Sprachen/Programme - ANGEPASST */
 .project-grid__text_me2 {
-  grid-column: 6 / 13; /* Text rechts: Spalte 7 bis Ende */
+  grid-column: 6 / 11; /* Text rechts: Spalte 7 bis Ende */
   grid-row: 2; /* Zweite Reihe (unter dem ersten Text) */
 }
 
